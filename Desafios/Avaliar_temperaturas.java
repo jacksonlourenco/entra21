@@ -24,11 +24,17 @@ public class Avaliar_temperaturas {
                 
 
         String diasSemana[] = {"domingo", "segunda", "terca", "quarta", "quinta", "sexta", "sabado"};
-        System.out.print("Selecione uma opção: ");
-        int option = sc.nextInt(); 
         int index = 0;
         double somaTemp = 0;
         double somaHora = 0;
+        double minTemp = Double.MAX_VALUE;
+        double maxTemp = Double.MIN_VALUE;
+        double ampTermica = 0;
+        double ampDia = 0;
+        String text = "Selecione uma opção:\n[1] Calcule a média diária de um dia da semana.\n[2] Calcule a média de uma hora dos dias da semana.\n[3] Maior amplitude térmica da semana.\n[0] Sair do programa.";
+        System.out.println(text);
+        System.out.print("Selecione uma opção: ");
+        int option = sc.nextInt(); 
         /* 
 a) A média diária de um dia da semana específico. O usuário entrará com o dia da semana por extenso, por exemplo “domingo”, então você deve pesquisar na linha correspondente. 
 b) A média da hora de todos os dias da semana. O usuário entrará com a hora, por exemplo 15, então você deve pesquisar na coluna correspondente. 
@@ -67,7 +73,6 @@ c) Qual dia da semana teve a maior amplitude térmica.
                     horaDia--;
 
                     if(horaDia <= 24 || horaDia >= 1) {
-                        System.out.println("Entrou na condição");
                         for (int i = 0; i < matriz.length; i++) {
                             somaHora += matriz[i][horaDia];
                         }
@@ -84,6 +89,29 @@ c) Qual dia da semana teve a maior amplitude térmica.
                     
                     
                 } else if (option == 3) {
+                    
+
+                    for(int i = 0; i < matriz.length; i++) {
+                        for (int j = 0; j < matriz[i].length; j++) {
+
+                            if (matriz[i][j] > maxTemp) {
+                                maxTemp = matriz[i][j];
+                            }
+                            
+                            if(matriz[i][j] < minTemp) {
+                                minTemp = matriz[i][j];
+                            }
+
+                            ampTermica = maxTemp - minTemp;
+                        }
+
+                        if(ampDia <= ampTermica) {
+                            ampDia = ampTermica;
+                            index = i;
+                        }
+                    }
+                    System.out.println("A maior amplitude térmica foi " + diasSemana[index] + ", e foi de: " + ampDia);
+                    break;
 
                 } else {
                     while (option > 3 || option < 0) { 
@@ -91,6 +119,9 @@ c) Qual dia da semana teve a maior amplitude térmica.
                         option = sc.nextInt(); 
                     }
                 }
+                System.out.println(text);
+                System.out.print("Selecione uma opção: ");
+                option = sc.nextInt(); 
             }
 
             System.out.println("Encerrando programa...");
