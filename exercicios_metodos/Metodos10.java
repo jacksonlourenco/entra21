@@ -2,6 +2,10 @@ package exercicios_metodos;
 
 import java.util.Scanner;
 
+/*
+Faça um método booleano que retorne true se o número passado como parâmetro seja par.
+Retorne false caso seja ímpar.
+*/
 public class Metodos10 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

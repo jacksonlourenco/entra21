@@ -2,6 +2,10 @@ package exercicios_metodos;
 
 import java.util.Scanner;
 
+/*
+Faça um método que receba 4 números como parâmetros, some os 4 números.
+Retorne a soma.
+*/
 public class Metodos09 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

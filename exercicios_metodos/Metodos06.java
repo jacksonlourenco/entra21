@@ -10,7 +10,12 @@ Imprima qual dos dois últimos números está mais perto do primeiro número "ba
 public class Metodos06 {
     public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
+        System.out.print("insira a base: ");
+        int base = sc.nextInt();
+
         numBase();
+        compararDistancias(base);
     }
 
     public static void numBase() {
@@ -33,4 +38,24 @@ public class Metodos06 {
             System.out.println("O número 2 é igual o número base: " + num2);
         }
     }
+
+    public static void compararDistancias(int base) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Insira o número 1: ");
+        int num1 = sc.nextInt();
+        System.out.print("Insira o número 2: ");
+        int num2 = sc.nextInt();
+
+        int distancia1 = Math.abs(base - num1);
+        int distancia2 = Math.abs(base - num2);
+
+        if (distancia1 < distancia2) {
+            System.out.println("O número: " + num1 + " está mais próximo da base " + base);
+        } else if (distancia2 < distancia1) {
+            System.out.println("O número: " + num2 + " está mais próximo da base " + base);
+        } else {
+            System.out.println("Distância iguais.");
+        }
+    }
+
 }

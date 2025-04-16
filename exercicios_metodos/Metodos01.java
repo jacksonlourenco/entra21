@@ -10,8 +10,8 @@ public class Metodos01 {
 
         int option = sc.nextInt();
 
-        if  (option >= 1 || option <= 4) {
-            if  (option == 1) {
+        if (option >= 1 || option <= 4) {
+            if (option == 1) {
                 verao();
             } else if (option == 2) {
                 inverno();
@@ -28,16 +28,18 @@ public class Metodos01 {
     public static void verao() {
         System.out.println("É verão, está quente.");
     }
+
     public static void inverno() {
         System.out.println("É inverno, o clima está frio.");
     }
+
     public static void outono() {
         System.out.println("É outono, o clima está começando a ficar frio.");
     }
+
     public static void primavera() {
         System.out.println("É primavera, o clima está agradável.");
     }
-    
 
     public static void main(String[] args) {
         clima();
