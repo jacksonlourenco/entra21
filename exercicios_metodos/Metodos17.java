@@ -22,7 +22,7 @@ public class Metodos17 {
         if (palavra.length() % 2 == 0) {
             return palavra.substring(0, 1);
         } else {
-            return palavra.substring(1, 2);
+            return palavra.substring(1, 2).toUpperCase();
         }
     }
 
