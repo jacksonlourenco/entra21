@@ -22,4 +22,5 @@ public class Mercado {
     public double calcularLaranjas() {
         return qntLaranjaVendida * valorLaranja;
     }
+
 }
