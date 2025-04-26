@@ -26,6 +26,7 @@ public class Metodos15 {
 
     private static Object limitador(int numMax, int numMin, int num) {
 
+        
         if (num <= numMax && num >= numMin) {
             return num + " está dentro do limite";
         } else {

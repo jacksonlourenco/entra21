@@ -22,6 +22,14 @@ public class Metodos08 {
         }
     }
 
+    public static String exibirEstacao (int num) {
+        if (num == 1) {
+            return "É verão";
+        } else {
+            return "Opção incorreta";
+        }
+    }
+
     private static String primavera() {
         return "É primavera";
     }

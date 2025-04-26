@@ -20,7 +20,7 @@ public class Metodos12 {
     private static int resultadoNum(int num) {
 
         if (num % 2 == 0) {
-            return (int) Math.pow(num, 3);
+            return (int) Math.pow(num, 2);
         } else {
             return num * 2;
         }

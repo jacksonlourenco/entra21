@@ -9,6 +9,7 @@ Retorne a soma.
 public class Metodos09 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         System.out.print("Insira o 1 número: ");
         int num1 = sc.nextInt();
         System.out.print("Insira o 2 número: ");
@@ -22,6 +23,7 @@ public class Metodos09 {
     }
 
     private static int somarNum(int num1, int num2, int num3, int num4) {
-        return num1 + num2 + num3 + num4;
+        int soma = num1 + num2 + num3 + num4;
+        return soma;
     }
 }
