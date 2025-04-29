@@ -6,39 +6,24 @@ public class Main {
     public static void main(String[] args) {
         DecimalFormat df = new DecimalFormat("0.00");
 
-        Mercado un1 = new Mercado();
-        un1.nome = "Unidade Blumenau";
-        un1.qntMacaVendida = 4000;
-        un1.valorMaca = 0.4;
-        un1.qntLaranjaVendida = 2900;
-        un1.valorLaranja = 0.67;
+        Mercado un1 = new Mercado("Unidade Blumenau", 4000, 0.4, 2900, 0.7);
 
-        System.out.println("O mercado: " + un1.nome + ", vendeu " + un1.qntMacaVendida +
-                " maças no ano, lucrando: R$" + df.format(valorLucrado(un1.qntMacaVendida, un1.valorMaca))
-                + " e vendeu " + un1.qntLaranjaVendida + " laranjas no ano, com o lucro de: R$" +
-                df.format(valorLucrado(un1.qntLaranjaVendida, un1.valorLaranja)));
-        System.out.println();
+        Mercado un2 = new Mercado("Unidade de Joinville", 1000, 0.55, 2500, 1); 
 
-        Mercado un2 = new Mercado();
-        un2.nome = "Unidade de Joinville";
-        un2.qntMacaVendida = 1000;
-        un2.valorMaca = 0.55;
-        un2.qntLaranjaVendida = 2500;
-        un2.valorLaranja = 1;
-        System.out.println("O mercado: " + un2.nome + " vendeu " + un2.qntMacaVendida + " Maças por R$" + un2.valorMaca
-                + "/un. E vendeu " + un2.qntLaranjaVendida + " Laranjas por R$" + un2.valorLaranja + "/un");
-        System.out.println();
+        Mercado un3 = new Mercado("Unidade de Florianópolis", 5000, 1, 7800, 1.5); 
 
-        Mercado un3 = new Mercado();
-        un3.nome = "Unidade de Florianópolis";
-        un3.qntMacaVendida = 5000;
-        un3.valorMaca = 1;
-        un3.qntLaranjaVendida = 6500;
-        un3.valorLaranja = 1.5;
-        System.out.println("O mercado: " + un3.nome + ", vendeu " + un3.qntMacaVendida +
-                " maças no ano, lucrando: R$" + df.format(valorLucrado(un3.qntMacaVendida, un3.valorMaca))
-                + " e vendeu " + un3.qntLaranjaVendida + " laranjas no ano, com o lucro de: R$" +
-                df.format(valorLucrado(un3.qntLaranjaVendida, un3.valorLaranja)));
+
+        //Quem teve a maior receita vendendo maças
+        if(un1.maiorReceitaMacas() > un2.maiorReceitaMacas() && un1.maiorReceitaMacas() > un3.maiorReceitaMacas()) {
+            System.out.println("A unidade de: " + un1.nome + " possui a maior receita.");
+        } else if (un2.maiorReceitaMacas() > un1.maiorReceitaMacas() && un2.maiorReceitaMacas() > un3.maiorReceitaMacas()) {
+            System.out.println("A unidade de: " + un2.nome + " possui a maior receita.");
+        } else if (un3.maiorReceitaMacas() > un1.maiorReceitaMacas() && un3.maiorReceitaMacas() > un2.maiorReceitaMacas()) {
+            System.out.println("A unidade de: " + un3.nome + " possui a maior receita.");
+        } else {
+            System.out.println("Todas possuem a mesma receita.");
+        }
+
 
     }
 
