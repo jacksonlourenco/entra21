@@ -8,15 +8,12 @@ public class VerificarAeronave {
         String nome = "";
 
         for (int i = 0; i < aeronaves.length; i++) {
-
             if (passageiros < aeronaves[i].passageiros) {
                 passageiros = aeronaves[i].passageiros;
                 nome = aeronaves[i].nome;
             }
         }
-
         return nome;
-
     }
 
     // B) Qual das aeronaves pode ficar no ar por mais tempo?
