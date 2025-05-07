@@ -13,5 +13,9 @@ public class Main {
         System.out.println(VerificarInfo.verificarMaterialPorMetro(produtos));
         System.out.println(VerificarInfo.verificarDensidade(produtos));
         System.out.println(VerificarInfo.verificarMaiorProduto(produtos));
+
+        GerenciarProduto gerenciamento = new GerenciarProduto();
+
+        gerenciamento.aplicarDesconto(produtos);
     }
 }

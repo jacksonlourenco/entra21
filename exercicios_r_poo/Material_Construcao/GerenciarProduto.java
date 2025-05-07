@@ -6,31 +6,39 @@ import java.util.Scanner;
 public class GerenciarProduto {
     Scanner sc = new Scanner(System.in);
 
-    public static void venderProduto(List<Produtos> produtos) {
+    public void venderProduto(List<Produtos> produtos) {
         System.out.print("O que quer comprar? ");
         String nome = sc.next();
         sc.nextLine();
 
+        Produtos produto = null;
+
         for (Produtos p : produtos) {
+
             if (p.getNome().equalsIgnoreCase(nome)) {
-                System.out.println("Quantos deseja comprar? ");
-                int quantidade = sc.nextInt();
-
-                if (p.getQuantidade() < quantidade) {
-
-                    p.setQuantidade(p.getQuantidade() - quantidade);
-                    System.out.println("Compra realiza com sucesso. Total: R$ " + (p.getPreco() * quantidade));
-                } else {
-                    System.out.println("Quantidade insuficinte.");
-                }
-            } else {
-                System.out.println("Produto não encontrado.");
+                produto = p;
+                break;
             }
-            break;
+        }
+
+        if (produto != null) {
+            System.out.print("Quantos deseja comprar? ");
+            int quantidade = sc.nextInt();
+
+            if (produto.getQuantidade() >= quantidade) {
+
+                produto.setQuantidade(produto.getQuantidade() - quantidade);
+                System.out.println("Compra realiza com sucesso. Total: R$ " + (produto.getPreco() * quantidade));
+            } else {
+                System.out.println("Quantidade insuficinte.");
+            }
+
+        } else {
+            System.out.println("Produto não encontrado.");
         }
     }
 
-    public static void adicionarEstoque(List<Produtos> produtos) {
+    public void adicionarEstoque(List<Produtos> produtos) {
         System.out.print("Insira o nome do produto: ");
         String nome = sc.next();
         sc.nextLine();
@@ -67,28 +75,32 @@ public class GerenciarProduto {
         }
     }
 
-    public static void aplicarDesconto(List<Produtos> produtos, int desconto) {
-        double porcentagem = desconto / 10;
+    public void aplicarDesconto(List<Produtos> produtos) {
+        System.out.print("Quanto de desconto deseja aplicar? ");
+        double desconto = sc.nextDouble();
+        double porcentagem = desconto / 100;
+        System.out.println("porcentagem" + porcentagem);
 
         System.out.print("Insira o produto que deseja aplicar o desconto: ");
         String nome = sc.next();
         sc.nextLine();
-        boolean existe = false;
 
+        Produtos produto = null;
         for (Produtos p : produtos) {
             if (p.getNome().equalsIgnoreCase(nome)) {
-                existe = true;
-                if (existe) {
-                    System.out.print("Quanto de desconto deseja aplicar? ");
-                    desconto = sc.nextInt();
-                    double valorDesconto = p.getPreco() * porcentagem;
-                    p.setPreco(p.getPreco() - valorDesconto);
-                    System.out.println("Preço atual: R$ " + p.getPreco());
-                    break;
-                }
+                produto = p;
+                break;
             }
         }
-        if (!existe) {
+
+        if (produto != null) {
+            System.out.println(porcentagem);
+            double valorDesconto = produto.getPreco() * porcentagem;
+            System.out.println(valorDesconto);
+            produto.setPreco(produto.getPreco() - valorDesconto);
+            System.out.println("Preço atual: R$ " + produto.getPreco());
+
+        } else {
             System.out.println("Produto não encontrado.");
         }
 
