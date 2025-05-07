@@ -5,7 +5,6 @@ public class Vereadores {
     String partido;
     int qntProjeto;
     int apProjeto; // projeto aprovado
-    double desempenho;
 
     public Vereadores(String nome, String partido, int qntProjeto, int apProjeto) {
         this.nome = nome;
@@ -44,14 +43,6 @@ public class Vereadores {
 
     public void setApProjeto(int apProjeto) {
         this.apProjeto = apProjeto;
-    }
-
-    public double getDesempenho() {
-        return desempenho;
-    }
-
-    public void setDesempenho(double desempenho) {
-        this.desempenho = desempenho;
     }
 
 }

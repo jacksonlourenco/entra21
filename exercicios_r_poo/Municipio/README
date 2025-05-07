@@ -1,0 +1,26 @@
+A Câmara Municipal de Vereadores de Blumenau pretende realizar uma estatística sobre o 
+desempenho dos seus parlamentares.
+
+Para cada um dos vereadores, ela possui o nome, partido, quantidade de projetos 
+apresentados e quantidade de projetos aprovados.
+
+O desempenho é calculado da seguinte forma: 
+(projetos aprovados / projetos apresentados) * índice de trabalho. 
+
+Se não apresentou nenhum projeto, o desempenho é 0 (zero).
+
+O índice de trabalho é definido pela seguinte tabela:
+Projetos apresentados Índice de trabalho
+01 – 05 0,80
+06 – 10 1,00
+11 – 17 1,08
+acima de 17 1,22
+
+
+Descubra:
+a) O total de projetos apresentados e de aprovados na câmara
+b) O vereador com mais projetos aprovados
+c) O vereador com maior desempenho
+d) Os vereadores cujo desempenho seja maior que o desempenho médio de toda a câmara
+Desafio:
+Descubra o partido com o melhor desempenho médio
