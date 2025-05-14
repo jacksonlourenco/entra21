@@ -26,7 +26,9 @@ public class Vereadores {
     }
 
     public void setPartido(String partido) {
-        this.partido = partido;
+        if (partido.equalsIgnoreCase("A") || partido.equalsIgnoreCase("B") || partido.equalsIgnoreCase("C")) {
+            this.partido = partido;
+        }
     }
 
     public int getQntProjeto() {
@@ -34,7 +36,9 @@ public class Vereadores {
     }
 
     public void setQntProjeto(int qntProjeto) {
-        this.qntProjeto = qntProjeto;
+        if (qntProjeto >= 0) {
+            this.qntProjeto = qntProjeto;
+        }
     }
 
     public int getApProjeto() {
@@ -42,7 +46,31 @@ public class Vereadores {
     }
 
     public void setApProjeto(int apProjeto) {
-        this.apProjeto = apProjeto;
+
+        if (getQntProjeto() <= 0) {
+            this.apProjeto = 0;
+        } else {
+            this.apProjeto = apProjeto;
+        }
+
     }
 
+    public double calcularDesempenho() {
+        double indice;
+
+        if (qntProjeto <= 0)
+            return 0;
+
+        if (qntProjeto <= 5) {
+            indice = 0.8;
+        } else if (qntProjeto <= 10) {
+            indice = 1.0;
+        } else if (qntProjeto <= 17) {
+            indice = 1.08;
+        } else {
+            indice = 1.22;
+        }
+
+        return ((double) apProjeto / qntProjeto) * indice;
+    }
 }
