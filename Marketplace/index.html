@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <script>
+        fetch('./components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+    </script>
+
+    <div class="homepage">
+        <img class="fundo" src="./img/fundo.jpg" alt="Fundo da página">
+        <div class="box-center">
+            <p class="title">
+                <h1 class="text"></h1>
+            </p>
+        </div>
+        <button class="button">
+            <a href="./pages/produtos.html">COMPRE JÁ</a>
+    </div>
+
+    <footer></footer>
+    <script>
+        // Fetch the footer HTML and insert it into the page
+        fetch('./components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('footer').innerHTML = data;
+            });
+    </script>
+</body>
+
+</html>

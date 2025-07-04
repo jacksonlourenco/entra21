@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Padaria Delícia</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-color: #f4c542;
+      --secondary-color: #fff8e1;
+      --accent-color: #ffe082;
+      --text-color: #5d4037;
+      --border-radius: 10px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #fff8e1, #fff3cd);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      color: var(--text-color);
+    }
+
+    .overlay {
+      background-color: rgba(255, 248, 225, 0.92);
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .header {
+      background-color: var(--primary-color);
+      padding: 16px 62px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 32px;
+      color: #fff;
+      text-shadow: 1px 1px 2px #a67c00;
+    }
+
+    .form-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 12px #f4c542;
+      width: 420px;
+      max-width: 90%;
+      border: 2px solid transparent;
+      border-image-slice: 1; 
+
+    }
+
+    .form-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: var(--primary-color);
+    }
+
+    .input-icon {
+      position: relative;
+      margin-top: 15px;
+    }
+
+    .input-icon i {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      color: #c49b00;
+    }
+
+    .input-icon input,
+    .input-icon select,
+    .input-icon textarea {
+      padding-left: 35px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ddd;
+      border-radius: var(--border-radius);
+      background-color: #fffdf7;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 5px rgba(244, 197, 66, 0.5);
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .checkbox-group input {
+      margin-right: 10px;
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    .checkbox-group input:checked + label {
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 12px;
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: var(--border-radius);
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #d4a200;
+      transform: scale(1.02);
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    table {
+      width: 95%;
+      max-width: 1000px;
+      border-collapse: collapse;
+      margin-top: 40px;
+      background-color: #fff;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background-color: var(--accent-color);
+      color: var(--text-color);
+      font-weight: 600;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    @media (max-width: 600px) {
+      .form-box, .header {
+        width: 90%;
+        padding: 20px;
+      }
+
+      table {
+        font-size: 12px;
+      }
+
+      th, td {
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="header">
+      <h1>Padaria Delícia 🍞</h1>
+    </div>
+
+    <div class="form-box">
+      <h2>Cadastro de Produto</h2>
+      <form id="productForm">
+        <div class="input-icon">
+          <input type="text" id="nome" placeholder="Nome do produto" required>
+        </div>
+
+        <div class="input-icon">
+          <textarea id="descricao" rows="3" placeholder="Descrição" required></textarea>
+        </div>
+
+        <div class="input-icon">
+          <input type="number" id="valor" step="0.01" placeholder="Valor (R$)" required>
+        </div>
+
+        <div class="input-icon">
+          <i class="fa fa-utensils"></i>
+          <select id="tipo" required>
+            <option value="">Tipo do Produto</option>
+            <option value="Doce">Doce</option>
+            <option value="Salgado">Salgado</option>
+            <option value="Bebida">Bebida</option>
+          </select>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="lactose">
+          <label for="lactose">Contém lactose</label>
+        </div>
+
+        <div class="input-icon">
+          <input type="date" id="validade" required>
+        </div>
+
+        <button type="submit">Cadastrar Produto</button>
+      </form>
+    </div>
+
+    <table id="productTable">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Valor</th>
+          <th>Tipo</th>
+          <th>Lactose</th>
+          <th>Validade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Produtos serão adicionados aqui -->
+      </tbody>
+    </table>
+  </div>
+
+    <script>
+        const form = document.getElementById('productForm');
+        const tableBody = document.querySelector('#productTable tbody');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const descricao = document.getElementById('descricao').value;
+            const valor = parseFloat(document.getElementById('valor').value).toFixed(2);
+            const tipo = document.getElementById('tipo').value;
+            const lactose = document.getElementById('lactose').checked ? 'Sim' : 'Não';
+            const validade = document.getElementById('validade').value;
+
+            const row = document.createElement('tr');
+            row.innerHTML = `
+        <td>${nome}</td>
+        <td>${descricao}</td>
+        <td>R$ ${valor.replace('.', ',')}</td>
+        <td>${tipo}</td>
+        <td>${lactose}</td>
+        <td>${validade}</td>
+      `;
+
+            tableBody.appendChild(row);
+            form.reset();
+        });
+    </script>
+</body>
+
+</html>

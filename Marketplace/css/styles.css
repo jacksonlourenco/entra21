@@ -1,0 +1,51 @@
+body {
+  margin: 0; 
+}
+
+
+
+/* Botões de navegação */
+nav a {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Efeito hover */
+nav a:hover {
+  background-color: white;
+  color: #333;
+  border-color: white;
+}
+
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  background-color: #007BFF; /* Azul */
+  width: 200px;
+  height: calc(100vh - 100px); /* Ajuste conforme altura do header/footer */
+  position: sticky;
+  top: 0;
+}
+
+.content {
+  flex: 1;
+  background: repeating-linear-gradient(
+    to bottom,
+    #111,
+    #111 40px,
+    #222 40px,
+    #222 80px
+  ); /* Listras escuras */
+  padding: 1rem;
+}
+

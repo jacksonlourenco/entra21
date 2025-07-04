@@ -1,0 +1,18 @@
+/* Header com gradiente cinza */
+header {
+  background: linear-gradient(to right, #333, #666);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+/* Logo em forma de triângulo verde */
+.logo {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 35px solid green;
+}
