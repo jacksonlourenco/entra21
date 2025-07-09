@@ -1,51 +1,69 @@
-body {
-  margin: 0; 
+body.home {
+  background: linear-gradient(to right, #4a4a4a, #1c1c1c);
+  color: #f1f1f1;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-
-/* Botões de navegação */
-nav a {
-  margin-left: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: transparent;
-  border: 2px solid white;
-  border-radius: 5px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
+.home-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
-
-/* Efeito hover */
-nav a:hover {
-  background-color: white;
-  color: #333;
-  border-color: white;
-}
-
 
 .container {
-  display: flex;
+  max-width: 600px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.sidebar {
-  background-color: #007BFF; /* Azul */
-  width: 200px;
-  height: calc(100vh - 100px); /* Ajuste conforme altura do header/footer */
-  position: sticky;
-  top: 0;
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.content {
-  flex: 1;
-  background: repeating-linear-gradient(
-    to bottom,
-    #111,
-    #111 40px,
-    #222 40px,
-    #222 80px
-  ); /* Listras escuras */
-  padding: 1rem;
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #ddd;
 }
 
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.4);
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.5rem;
+  }
+}

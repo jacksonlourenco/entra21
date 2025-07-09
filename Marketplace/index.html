@@ -11,7 +11,7 @@
     <script src="script.js" defer></script>
 </head>
 
-<body>
+<body class="home">
     <div id="header"></div>
     <script>
         fetch('./components/header.html')
@@ -21,16 +21,11 @@
             });
     </script>
 
-    <div class="homepage">
-        <img class="fundo" src="./img/fundo.jpg" alt="Fundo da página">
-        <div class="box-center">
-            <p class="title">
-                <h1 class="text"></h1>
-            </p>
-        </div>
-        <button class="button">
-            <a href="./pages/produtos.html">COMPRE JÁ</a>
-    </div>
+    <main class="home-container">
+        <h1>Bem-vindo ao Marketplace</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+        <a href="produtos.html" class="btn">Ver Produtos</a>
+    </main>
 
     <footer></footer>
     <script>

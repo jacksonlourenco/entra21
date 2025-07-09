@@ -16,3 +16,7 @@ header {
   border-right: 20px solid transparent;
   border-bottom: 35px solid green;
 }
+
+#header {
+  flex-shrink: 0;
+}
