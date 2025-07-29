@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar CEP</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="cep-form-container">
+        <div class="cep-form-title">Buscar Endereço por CEP</div>
+        <form id="cepForm">
+            <div class="cep-form-group">
+                <label for="cep" class="cep-form-label">CEP</label>
+                <input type="text" id="cep" name="cep" class="cep-form-input" maxlength="9" placeholder="Digite o CEP" required>
+            </div>
+            <div class="cep-form-group">
+                <label for="logradouro" class="cep-form-label">Logradouro</label>
+                <input type="text" id="logradouro" name="logradouro" class="cep-form-input" readonly>
+            </div>
+            <div class="cep-form-group">
+                <label for="bairro" class="cep-form-label">Bairro</label>
+                <input type="text" id="bairro" name="bairro" class="cep-form-input" readonly>
+            </div>
+            <div class="cep-form-group">
+                <label for="cidade" class="cep-form-label">Cidade</label>
+                <input type="text" id="cidade" name="cidade" class="cep-form-input" readonly>
+            </div>
+            <div class="cep-form-group">
+                <label for="estado" class="cep-form-label">Estado</label>
+                <input type="text" id="estado" name="estado" class="cep-form-input" readonly>
+            </div>
+            <button type="submit" class="cep-form-btn" id="buscarCepBtn">Buscar</button>
+        </form>
+    </div>
+</body>
+</html>
